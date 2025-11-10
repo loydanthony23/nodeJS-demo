@@ -12,6 +12,7 @@ A Node.js Express API demonstration project showcasing RESTful API endpoints, er
 - **Health check** endpoint
 - **User management** demo endpoints
 - **Product management** demo endpoints
+- **Task management** RESTful API (complete CRUD with filtering and sorting)
 
 ## 📋 Prerequisites
 
@@ -78,6 +79,22 @@ The server will start on `http://localhost:3000` (or the port specified in your 
 - **PUT** `/api/products/:id` - Update a product
 - **DELETE** `/api/products/:id` - Delete a product
 
+### Tasks (Sample RESTful API)
+- **GET** `/api/tasks` - Get all tasks (supports filtering by status/priority and sorting)
+- **GET** `/api/tasks/:id` - Get task by ID
+- **POST** `/api/tasks` - Create a new task
+- **PUT** `/api/tasks/:id` - Full update of a task
+- **PATCH** `/api/tasks/:id` - Partial update of a task
+- **DELETE** `/api/tasks/:id` - Delete a task
+
+**Query Parameters for GET /api/tasks:**
+- `status` - Filter by status (pending, in-progress, completed)
+- `priority` - Filter by priority (low, medium, high)
+- `sortBy` - Sort field (title, priority, dueDate, createdAt)
+- `order` - Sort order (asc, desc)
+
+**Example:** `GET /api/tasks?status=pending&priority=high&sortBy=dueDate&order=asc`
+
 ## 📁 Project Structure
 
 ```
@@ -90,7 +107,8 @@ node-deploy-demo/
 │   ├── routes/
 │   │   ├── index.js          # Main routes
 │   │   ├── users.js          # User routes
-│   │   └── products.js       # Product routes
+│   │   ├── products.js       # Product routes
+│   │   └── tasks.js          # Task routes (sample RESTful API)
 │   └── middleware/
 │       └── errorHandler.js   # Error handling middleware
 ├── .env.example              # Environment variables template
@@ -124,6 +142,58 @@ curl -X POST http://localhost:3000/api/users \
 ### Get All Products
 ```bash
 curl http://localhost:3000/api/products
+```
+
+### Tasks API Examples
+
+#### Get all tasks
+```bash
+curl http://localhost:3000/api/tasks
+```
+
+#### Get tasks with filtering and sorting
+```bash
+curl "http://localhost:3000/api/tasks?status=pending&priority=high&sortBy=dueDate&order=asc"
+```
+
+#### Create a new task
+```bash
+curl -X POST http://localhost:3000/api/tasks \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Learn RESTful APIs",
+    "description": "Complete RESTful API tutorial",
+    "status": "in-progress",
+    "priority": "high",
+    "dueDate": "2024-12-31"
+  }'
+```
+
+#### Update a task (full update with PUT)
+```bash
+curl -X PUT http://localhost:3000/api/tasks/1 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Updated task title",
+    "description": "Updated description",
+    "status": "completed",
+    "priority": "low",
+    "dueDate": "2024-12-25"
+  }'
+```
+
+#### Partially update a task (PATCH)
+```bash
+curl -X PATCH http://localhost:3000/api/tasks/1 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "status": "completed"
+  }'
+```
+
+#### Delete a task
+```bash
+curl -X DELETE http://localhost:3000/api/tasks/1
 ```
 
 ## 🚢 Deployment
