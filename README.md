@@ -13,6 +13,7 @@ A Node.js Express API demonstration project showcasing RESTful API endpoints, er
 - **User management** demo endpoints
 - **Product management** demo endpoints
 - **Task management** RESTful API (complete CRUD with filtering and sorting)
+- **Frontend demo** showcasing API integration with modern, responsive design
 
 ## 📋 Prerequisites
 
@@ -108,6 +109,53 @@ Starts the server in production mode.
 
 The server will start on `http://localhost:3000` (or the port specified in your `.env` file).
 
+## 🎨 Frontend Demo
+
+This project includes a beautiful frontend demonstration that showcases how to integrate and style API results. The frontend is located in the `frontend/` folder and demonstrates:
+
+- **Modern, responsive design** with CSS Grid and Flexbox
+- **API integration** using Fetch API
+- **CRUD operations** (Create, Read, Update, Delete) for tasks
+- **Filtering and sorting** capabilities
+- **Real-time updates** from the backend API
+
+### Accessing the Frontend
+
+Once the server is running, open your browser and navigate to:
+
+```
+http://localhost:3000
+```
+
+The frontend will automatically load and connect to the backend API.
+
+### Frontend Features
+
+- **Task List Display**: View all tasks in a beautiful card-based layout
+- **Create Tasks**: Add new tasks with title, description, status, priority, and due date
+- **Edit Tasks**: Update existing tasks with a modal form
+- **Delete Tasks**: Remove tasks with confirmation
+- **Filtering**: Filter tasks by status (pending, in-progress, completed) and priority (low, medium, high)
+- **Sorting**: Sort tasks by title, priority, due date, or creation date
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+
+### Frontend Structure
+
+```
+frontend/
+├── index.html      # Main HTML structure
+├── css/
+│   └── style.css  # Modern styling and responsive design
+└── js/
+    └── app.js     # API integration and UI logic
+```
+
+The frontend demonstrates best practices for:
+- **API Communication**: Using async/await with Fetch API
+- **Error Handling**: Graceful error messages and loading states
+- **User Experience**: Loading indicators, empty states, and success feedback
+- **Code Organization**: Modular JavaScript with clear function separation
+
 ## 📚 API Endpoints
 
 ### Health Check
@@ -159,6 +207,12 @@ node-deploy-demo/
 │   │   └── tasks.js          # Task routes (sample RESTful API)
 │   └── middleware/
 │       └── errorHandler.js   # Error handling middleware
+├── frontend/
+│   ├── index.html            # Frontend HTML structure
+│   ├── css/
+│   │   └── style.css        # Frontend styling
+│   └── js/
+│       └── app.js           # Frontend JavaScript (API integration)
 ├── .env.example              # Environment variables template
 ├── .gitignore               # Git ignore rules
 ├── package.json             # Project dependencies

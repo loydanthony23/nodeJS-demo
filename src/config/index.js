@@ -18,12 +18,12 @@ dotenv.config();
 export const config = {
     // Environment mode: "development" or "production"
     // Affects logging, error messages, and other environment-specific behaviors
-    env: process.env.NODE_ENV,
+    env: process.env.NODE_ENV || "development",
     
     // Port number for the HTTP server
     // Defaults to 3000 if not specified in environment variables
-    port: process.env.PORT,
+    port: process.env.PORT || 3000,
     
     // Application name displayed in logs and API responses
-    appName: process.env.APP_NAM,
+    appName: process.env.APP_NAME || "Node Deploy Demo",
 };
