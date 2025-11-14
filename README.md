@@ -19,6 +19,54 @@ A Node.js Express API demonstration project showcasing RESTful API endpoints, er
 - Node.js (v14 or higher)
 - npm or yarn
 
+### Checking if Node.js is Installed
+
+Before proceeding, check if Node.js is already installed on your system:
+
+**On Windows (Command Prompt or PowerShell):**
+```bash
+node --version
+npm --version
+```
+
+If both commands return version numbers, Node.js and npm are already installed. If you get an error like `'node' is not recognized as an internal or external command`, you need to install Node.js.
+
+### Installing Node.js on Windows
+
+If Node.js is not found on your Windows PC, follow these steps:
+
+1. **Download Node.js:**
+   - Visit the official Node.js website: [https://nodejs.org/](https://nodejs.org/)
+   - Download the **LTS (Long Term Support)** version for Windows (recommended)
+   - The installer file will be named something like `node-vXX.X.X-x64.msi`
+
+2. **Run the Installer:**
+   - Double-click the downloaded `.msi` file
+   - Follow the installation wizard:
+     - Click "Next" on the welcome screen
+     - Accept the license agreement
+     - Choose the installation directory (default is recommended)
+     - **Important:** Make sure "Add to PATH" option is checked (it should be by default)
+     - Click "Install" and wait for the installation to complete
+
+3. **Verify Installation:**
+   - Close and reopen your Command Prompt or PowerShell window
+   - Run the following commands to verify:
+   ```bash
+   node --version
+   npm --version
+   ```
+   - Both commands should now display version numbers (e.g., `v18.17.0` and `9.6.7`)
+
+4. **Troubleshooting:**
+   - If the commands still don't work after installation, restart your computer
+   - Ensure Node.js was added to your system PATH during installation
+   - You can manually add Node.js to PATH if needed:
+     - Go to System Properties → Environment Variables
+     - Add `C:\Program Files\nodejs\` to your PATH variable
+
+**Note:** npm (Node Package Manager) is automatically included with Node.js, so you don't need to install it separately.
+
 ## 🛠️ Installation
 
 1. Clone the repository:
