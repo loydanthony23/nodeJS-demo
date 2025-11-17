@@ -13,6 +13,15 @@ const router = Router();
  */
 router.get("/hello", (req, res) => {
     res.json({ message: "Hello, world!" });
+
+    
 });
+router.get("/hi", (req, res) => {
+    res.json({ message: "Hello, world!dfffdffd" });
+
+    
+});
+
+
 
 export default router;
