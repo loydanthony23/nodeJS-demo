@@ -66,7 +66,9 @@ If Node.js is not found on your Windows PC, follow these steps:
      - Go to System Properties → Environment Variables
      - Add `C:\Program Files\nodejs\` to your PATH variable
 
-**Note:** npm (Node Package Manager) is automatically included with Node.js, so you don't need to install it separately.
+**Note:** npm (Node Package Manager) is automatically included with Node.js, so you don't need to install it separately. 
+******(if terminal cant recognize npm, try this **Set-ExecutionPolicy RemoteSigned** using powershell
+)
 
 ## 🛠️ Installation
 
@@ -191,6 +193,9 @@ The frontend demonstrates best practices for:
 
 **Example:** `GET /api/tasks?status=pending&priority=high&sortBy=dueDate&order=asc`
 
+### Test Routes
+- **GET** `/api/test/hello` - Returns a simple hello world message
+
 ## 📁 Project Structure
 
 ```
@@ -306,6 +311,34 @@ This project is ready for deployment on various platforms:
 - **Railway**: Add environment variables in project settings
 - **Render**: Configure environment variables in the service settings
 - **AWS/DigitalOcean**: Use PM2 or systemd for process management
+
+## 🧪 Testing
+
+### Unit Tests
+
+Run the hello world endpoint test:
+
+```bash
+node src/routes/test.test.js
+```
+
+Expected output:
+```
+✅ Test passed: GET /api/test/hello
+```
+
+### Manual Testing
+
+Test the hello endpoint with curl:
+
+```bash
+curl http://localhost:3000/api/test/hello
+```
+
+Response:
+```json
+{"message":"Hello, world!"}
+```
 
 ## 📝 License
 

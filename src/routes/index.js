@@ -10,6 +10,7 @@ import { config } from "../config/index.js";
 import usersRouter from "./users.js";
 import productsRouter from "./products.js";
 import tasksRouter from "./tasks.js";
+import testRouter from "./test.js";
 
 // Create a new Express router instance
 const router = Router();
@@ -48,5 +49,9 @@ router.use("/products", productsRouter);
 // Mount task routes at /api/tasks
 // All routes defined in tasks.js will be prefixed with /tasks
 router.use("/tasks", tasksRouter);
+
+// Mount test routes at /api/test
+// Provides a simple health/hello endpoint for quick checks
+router.use("/test", testRouter);
 
 export default router;
